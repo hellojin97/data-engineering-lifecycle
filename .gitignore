@@ -250,3 +250,5 @@ $RECYCLE.BIN/
 *.png
 *.drawio
 memo
+*.txt
+*.bkp
