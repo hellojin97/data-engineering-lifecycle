@@ -3,7 +3,7 @@ networks:
     external: true
 
 services:
-  # 실시간 10대의 운행정보
+  # DriverLogMain Generator
   driverlogmain:
     image: openjdk:11-jre
     container_name: smartcar-loggen-realtime
@@ -17,7 +17,7 @@ services:
       - t4y
     depends_on:
       - fluent-bit1
-  
+
   # DriverLogMain Collector
   fluent-bit1:
     image: fluent/fluent-bit:latest
