@@ -1,0 +1,18 @@
+networks:
+  t4y:
+    external: true
+
+services:
+  fluentd:
+    build:
+      context: ./  # Dockerfile 위치
+      dockerfile: Dockerfile
+    container_name: fluentd
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+      - "9880:9880"
+    volumes:
+      - ./fluentd/conf:/fluentd/etc
+    networks:
+      - t4y
